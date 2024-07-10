@@ -1,0 +1,1 @@
+ [class](https://www.geeksforgeeks.org/c-classes-and-objects)  -- External link

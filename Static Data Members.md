@@ -1,0 +1,101 @@
+Static data members are class members that are declared using **static** keyword.
+Static data members are class variables that are **shared among all instances** of a class. This means that **there is only one copy** of the static data member, regardless of how many objects of the class are created. Static data members are **useful for storing information that is common to all objects of a class.**
+
+The static keyword is used with a variable to make the memory of the variable static **once a static variable is declared its memory can’t be changed**, every object points to the same memory.
+
+A static member has certain special characteristics which are as follows:
+1. **Shared among All Instances**: All instances of the class share the same static data member.
+2. **Class-Level Storage**: Static data members are stored at the class level rather than at the instance level.
+3. **Initialization**: Static data members **must be defined outside the class definition** and can be initialized at the same time. It is **initialized before any object of this class is created**, even before the main starts.
+4. **Access**: They can be accessed using the class name or an object of the class.
+
+
+```
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Car {
+private:
+    string make;
+    string model;
+    int year;
+
+public:
+    // Static data member
+    static int carCount;
+
+    // Constructor
+    Car(string carMake, string carModel, int carYear) 
+        : make(carMake), model(carModel), year(carYear) {
+        carCount++;  // Increment car count when a new car object is created
+    }
+
+    // Destructor
+    ~Car() {
+        carCount--;  // Decrement car count when a car object is destroyed
+    }
+
+    // Constant member function
+    void displayInfo() const {
+        cout << "Make: " << make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+
+    // Static member function to get the car count
+    static int getCarCount() {
+        return carCount;
+    }
+};
+
+// Definition and initialization of static data member
+int Car::carCount = 0;
+
+int main() {
+    Car car1("Toyota", "Camry", 2022);
+    Car car2("Honda", "Accord", 2023);
+
+    cout << "Car count: " << Car::getCarCount() << endl;  // Accessing static member function 
+    //-------------------> RETURNS 2
+
+    car1.displayInfo();  
+    car2.displayInfo();
+
+    {
+        Car car3("Ford", "Mustang", 2024);
+        cout << "Car count: " << Car::getCarCount() << endl;  // Car count should be 3
+        //-------------------> RETURNS 3
+    } // car3 goes out of scope here and is destroyed
+
+    cout << "Car count: " << Car::getCarCount() << endl;  // Car count should be 2
+    //-------------------> RETURNS 2
+
+    return 0;
+}
+
+```
+
+
+### Advantages of Static Member Functions
+
+1. **Access to Static Data Members**:
+    - [[Static member functions]] can directly access static data members of the class. This is useful when you need to manipulate or retrieve values of static data members, which are shared across all instances of the class.
+    - 
+2. **Class-Level Operations**:
+    - Static member functions can be used to perform operations that are related to the class as a whole, rather than to any specific instance. Examples include utility functions, factory methods, and functions that manage static data members.
+
+3. **Encapsulation**:
+    - They help in encapsulating operations that are logically related to the class but do not require access to non-static member variables or functions. This can lead to better-organized code and clearer separation of responsibilities.
+    - 
+4. **Efficiency**:
+    - Since static member functions do not operate on an instance of the class, there is no overhead of passing the `this` pointer. This can result in slightly more efficient code, especially for frequently called utility functions.
+ 5. **No Object Required**:
+    - Static member functions can be called without creating an instance of the class. This is particularly useful for utility functions that do not need to operate on individual objects of the class.
+
+
+
+
+
+> Next topic -> [[Static Member Functions]]

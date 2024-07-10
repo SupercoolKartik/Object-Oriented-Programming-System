@@ -1,0 +1,37 @@
+Objects are instances of classes. When you create a class, you are essentially creating a blueprint or a template. Objects are then created based on this blueprint, and each object has its own set of properties and behaviors.
+When a class is defined, no memory is allocated but when it is instantiated (i.e. an object is created) memory is allocated.
+
+We can create multiple objects of this #Car_Class, each representing a specific car. Each car object would have its own unique properties, such as make, model, color, and year. By "unique properties," It means that each object of the `Car` class can have different values for its properties.
+```
+// Create objects of the Car class 
+
+Car car1("Toyota", "Camry", "Blue", 2022); 
+Car car2("Honda", "Accord", "Red", 2023);
+
+// Call the displayInfo() method for each car object 
+car1.displayInfo();
+```
+
+
+
+-------
+
+#### MY NOTES
+
+Creating an object of the class Hero
+
+```
+.
+.
+.
+int main(){
+	Hero h1;
+	Hero h1(); -> (h1 object of Hero type)
+}
+
+```
+
+
+
+
+> Next topic -> [[Memory Allocation]]

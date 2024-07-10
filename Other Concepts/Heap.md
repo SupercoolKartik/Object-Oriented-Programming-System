@@ -1,0 +1,3 @@
+- The heap is a region of a program's virtual memory space where dynamic memory allocation occurs at runtime.
+-  When you allocate memory dynamically (using functions like `malloc()` in C or `new` in C++), memory is typically allocated from the heap.
+-  The heap is managed by the operating system's memory manager, which keeps track of allocated and deallocated memory blocks.

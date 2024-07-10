@@ -1,0 +1,31 @@
+Static Member Function in a class is the function that is declared as static because of which function attains certain properties as defined below:
+
+- A static member function is **independent of any object** of the class. 
+- A static member function **can be called even if no objects** of the class exist.
+- A static member function **can also be accessed using the class name through the scope resolution operator**.
+```
+	Car:: staticFun()
+```
+- A static member function can access static data members and static member functions inside or outside of the class.
+- Static member functions have a scope inside the class and cannot access the current object pointer.
+- You can also use a static member function to determine how many objects of the class have been created.
+
+
+**Note:** Static member functions in C++ cannot access non-static data members or non-static member functions directly because they do not operate on a specific instance of the class. Consequently, they do not have a `this` pointer.
+However, it can do so indirectly through an instance of the class. Here is an example to illustrate this:
+
+```
+// Static member function accessing non-static members through an instance 
+static void showCarInfo(const Car& car) { 
+	cout << "Make: " << car1.make << endl;     
+	cout << "Model: " << car1.model << endl;
+	cout << "Year: " << car1.year << endl; 
+}
+```
+
+
+
+
+
+> Next topic -> [[Encapsulation]]
+

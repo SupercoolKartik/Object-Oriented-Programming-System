@@ -1,0 +1,89 @@
+Class is a **blueprint or template for creating [[objects]]**. It defines the properties (attributes or data) and behaviors (methods or functions) that objects of that class will have.
+
+Think of a class as a blueprint for creating objects of a particular type.
+For example, if you were designing a program to model cars, you might create a class called "Car" that defines properties such as model, color, and behaviors such as driving, braking, and turning.
+
+**Once a class is defined, you can create multiple objects (instances) based on that class, each with its own set of properties and behaviors**. These objects can interact with each other and with other parts of the program.
+
+#Car_Class
+```
+// Define the Car class
+class Car {
+private:
+    string make;
+    string model;
+    string color;
+    
+
+public:
+	int year;
+
+    // Constructor to initialize object properties
+    Car(string carMake, string carModel, string carColor, int carYear) {
+        make = carMake;
+        model = carModel;
+        color = carColor;
+        year = carYear;
+    }
+
+    // Method to display information about the car
+    void displayInfo() {
+        cout << "Make: " << make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Color: " << color << endl;
+        cout << "Year: " << year << endl;
+    }
+
+    // Method to simulate the car driving
+    void drive() {
+        cout << "The " << color << " " << make << " " << model << " is driving." << endl;
+    }
+
+    // Method to simulate the car braking
+    void brake() {
+        cout << "The " << color << " " << make << " " << model << " is braking." << endl;
+    }
+};
+
+```
+
+-------------------------------------------------------------------------------
+
+#### MY NOTES
+#Hero_Class
+```
+class Hero {
+private:
+    char level;
+    int health;
+    
+
+public:
+	char name;
+
+	//Getter functions for health and level
+    int getHealth() {
+        return health;
+    }
+
+    char getLevel() {
+        return level;
+    }
+
+	//Setter functions for health and level
+    void setHealth(int val) {
+        this->health = val;
+    }
+
+    void setLevel(char val) {
+        this->level = val;
+    }
+    
+};
+
+```
+What is [[this]] here?
+
+
+
+> Next topic -> [[Objects]]

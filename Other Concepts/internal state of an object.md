@@ -1,0 +1,1 @@
+The internal state of an object refers to the current values of its data members (attributes or fields).

@@ -1,0 +1,135 @@
+
+A destructor is a special member function in C++ that is automatically invoked when an object goes out of scope or is explicitly deleted. The main purpose of a destructor is to release resources that the object may have acquired during its lifetime, such as dynamically allocated memory, file handles, or network connections.
+
+##### Key Points about Destructors:-
+
+1. **Automatic Invocation**:
+    - Destructors are called automatically when an object goes out of scope (e.g., when a local object is destroyed at the end of a function) or when an object is explicitly deleted using the `delete` keyword.
+    
+2. **Resource Management**:
+    - Destructors are primarily used to free resources that the object may have allocated. This is crucial in preventing resource leaks, especially with dynamic memory.
+    
+3. **One Per Class**:
+    - Each class can have **only one destructor**. It is not possible to define more than one destructor.
+    
+4. **Order of Destruction**:
+    - For objects with automatic storage duration (local objects), destructors are called in the reverse order of object creation. To know why, go here,  [[Order Of Destruction]] of objects.
+
+5. **Naming and Syntax**:
+    - A destructor has the same name as the class, preceded by a tilde (`~`).
+    - It does not take any arguments and does not return any value.
+    - It has no return type not even void.
+    ```
+    ~ Car();
+    ```
+
+
+**==Q. When do we need to write a user-defined destructor and should not rely on the default destructor ?==**
+If we do not write our own destructor in class, the compiler creates a default destructor for us. These destructors primarily handle member object destruction but **don't explicitly deallocate memory** allocated using `new` or `malloc`.  The default destructor works fine unless we have dynamically allocated memory or pointer in class. When a class contains a pointer to memory allocated in the class, we should write a destructor to release memory before the class instance is destroyed. This must be done to avoid memory leaks.
+When you have dynamically allocated memory (using `new` or `malloc`) within a class object and fail to release it in a destructor, a memory leak occurs. This means the memory remains allocated even though the object is no longer needed, potentially leading to performance degradation and resource exhaustion over time.
+If we do not write our own destructor in class, the compiler creates a default destructor for us. The default destructor works fine unless we have dynamically allocated memory or pointer in class. When a class contains a pointer to memory allocated in the class, we should write a destructor to release memory before the class instance is destroyed. This must be done to avoid memory leaks.
+
+Note: If the object is created by using new or the constructor uses new to allocate memory that resides in the heap memory or the free store, the destructor should use delete to free the memory.
+
+
+##### Properties of Destructor:-
+- It cannot be declared static or const.
+- An object of a class with a Destructor cannot become a member of the union.
+- A destructor should be declared in the public section of the class.
+- The programmer cannot access the address of the destructor.
+
+
+###### When is the destructor called?
+A destructor function is called automatically when the object goes out of scope:
+
+1. the function ends 
+2. the program ends 
+3. a block containing local variables ends 
+4. a delete operator is called
+Note: destructor can also be called explicitly for an object.
+
+
+### 
+
+
+##### Example with Default Destructor
+```
+
+class Car {
+private:
+    string make; // Pointer to dynamically allocated memory for make
+    string model;
+    int year;
+
+public:
+    // Constructor Car(string carMake, string carModel, int carYear) { make = carMake; model = carModel; year = carYear; }
+
+    void displayInfo() const {
+        cout << "Make: " << *make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+    
+	// No need for a custom destructor since there's no dynamic memory
+};
+
+int main() {
+    {
+        Car car1("Toyota", "Camry", 2022);
+        car1.displayInfo();
+        // The default destructor will be called here when car1 goes out of scope
+    }
+    
+    
+    return 0;
+}
+
+```
+
+##### Example with User-Created Destructor
+```
+
+class Car {
+private:
+    string* make; // Pointer to dynamically allocated memory for make
+    string model;
+    int year;
+
+public:
+    // Constructor
+    Car(string carMake, string carModel, int carYear) {
+        make = new string(carMake); // Allocate memory for make and copy the string
+        model = carModel;
+        year = carYear;
+    }
+
+    // User-created destructor
+    ~Car() {
+        delete make; // Release dynamically allocated memory
+        cout << "Destructor called for " << model << endl;
+    }
+
+    void displayInfo() const {
+        cout << "Make: " << *make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+};
+
+int main() {
+    {
+        Car car1("Toyota", "Camry", 2022);
+        car1.displayInfo();
+        // The custom destructor will be called here when car1 goes out of scope
+    }
+    // Memory allocated for make is freed correctly, no memory leak
+	// But in case if we remove the user-defined destructor and then run the program, the default constructor will run, Memory allocated for make is not freed, causing a memory leak
+    
+    return 0;
+}
+
+```
+
+
+
+> Next topic -> [[Initialization List]]

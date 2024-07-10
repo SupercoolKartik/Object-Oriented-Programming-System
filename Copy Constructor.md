@@ -1,0 +1,111 @@
+
+A **copy constructor** is a member function(function that is associated with a specific class or object) which creates an object by initializing it with an object of the same class, which has been created previously.
+
+Copy constructor is used to initialize the members of a newly created object by copying the members of an already existing object
+
+The process of initializing members of an object through a copy constructor is known as **copy initialization**. It is also called **member-wise initialization** because the copy constructor initializes one object with the existing object, both belonging to the same class on a member by member copy basis.
+
+ **Copy constructor takes a reference to an object of the same class as an argument.**
+
+Note: Class members in the example below is initialised using [[Initialization List]] syntax.
+
+```
+
+class Car {
+private:
+    string make;
+    string model;
+    int year;
+
+public:
+    // Constructor
+    Car(string carMake, string carModel, int carYear) : make(carMake), model(carModel), year(carYear) {}
+
+    // Copy constructor
+    Car(const Car& other) : make(other.make), model(other.model), year(other.year) {}
+
+    // Method to display information about the car
+    void displayInfo() {
+        cout << "Make: " << make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+};
+
+int main() {
+    // Create a Car object
+    Car originalCar("Toyota", "Camry", 2022);
+
+    // Create a copy of the original car using the copy constructor
+    Car copiedCar = originalCar;
+
+    // Display information about the original car
+    cout << "Original Car:" << endl;
+    originalCar.displayInfo();
+
+    // Display information about the copied car
+    cout << "\nCopied Car:" << endl;
+    copiedCar.displayInfo();
+
+    return 0;
+}
+
+
+```
+
+==**Q. When is a Copy Constructor Called in C++?**==
+The Copy constructor is called mainly when a new object is created from an existing object, as a copy of the existing object.
+In C++, a Copy Constructor may be called for the following cases:
+1. When an object of the class is returned by value.   
+2. When an object of the class is passed (to a function) by value as an argument.   
+3. object is constructed based on another object of the same class.  
+4. When an object is constructed using initialization lists with braces   
+5. When the compiler generates a temporary object.
+
+==**Q.  Why should we not pass the object by value in the copy constructor?**==
+Copy constructor takes a reference to an object of the same class as an argument. If you pass the object by value in the copy constructor, it would result in a recursive call to the copy constructor itself. 
+This happens because passing by value involves making a copy, and making a copy involves calling the copy constructor, leading to an infinite loop. Using a reference avoids this recursion. So we use reference of Objects to avoid infinite calls
+
+----
+
+#### My Notes
+###### Copy Constructor
+Just like the normal constructor, there is a default copy constructor in any class which gets called when a new object needs to be created as a copy of an existing object.
+As the name suggests, it copies properties of an existing object of the same class into another.
+
+**Copy constructor takes a reference to an object of the same class as an argument.**
+
+```
+	Hero h1 = (10,'B);
+	Hero h2 = h1; or Hero h2(h1);
+```
+
+We can create our own copy constructor, after the creation of our own constructor function the default one will vanish.
+
+```
+Class Hero{
+	private:
+		.
+		.
+		.
+	public:
+		Hero(Hero& temp){
+			this->health = temp.health;
+			this->level= temp.level;
+		}
+};
+```
+Note: We cannot pass parameters in the copy constructor by value, we will have to pass them by reference,
+else it will throw error;
+```
+Hero( Hero temp){
+		.
+		.
+}
+```
+the above code will throw errors
+
+
+
+
+> Next topic -> [[Shallow and Deep Copy]]

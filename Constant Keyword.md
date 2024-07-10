@@ -1,0 +1,177 @@
+
+### 1. Constant Member Variables
+
+A member variable of a class can be made constant by using the `const` keyword. A constant member variable must be initialized at the time of its declaration or within the constructor's initializer list.
+
+**Ensures that the member variable cannot be modified after initialization.**
+
+```
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Car {
+private:
+    const string make; // Constant member variable
+    string model;
+    int year;
+
+public:
+    // Constructor
+    Car(string carMake, string carModel, int carYear) 
+        : make(carMake), model(carModel), year(carYear) {}
+
+    // Method to display information about the car
+    void displayInfo() const {
+        cout << "Make: " << make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+    void changeMake(string m){
+        this->make=m;
+    }
+};
+
+int main() {
+    Car car1("Toyota", "Camry", 2022);
+    car1.displayInfo();
+    //car1.changeItem("Honda");  // Changing the const variable make of this object like this will give error
+    //car1.displayInfo();
+    return 0;
+}
+
+```
+
+### 2. Constant Member Functions
+
+A member function can be made constant by **appending the 'const' keyword after the function declaration**. This **indicates that the function does not modify** any member variables of the class.
+
+**These functions guarantees no not modify any member variables of the object**. They can be called on both 'const' and non-'const' objects.
+
+```
+.
+.
+.
+.
+
+    // Constant member function
+    void displayInfo() const {
+        cout << "Make: " << make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+
+    // Non-constant member function
+    void setModel(string newModel) {
+        model = newModel;
+.
+.
+.
+.
+
+```
+
+**Note:** You cannot make the `setModel` function a constant member function if it is intended to modify the member variable `model`. **A constant member function is one that guarantees not to modify any member variables of the class**. Since the purpose of `setModel` is to change the value of `model`, it inherently modifies the state of the object, and thus cannot be declared as `const`.
+
+
+### 3. Constant Parameters
+
+Function parameters can be made constant to prevent modification within the function. This is useful for passing large objects by reference without allowing the function to modify them.
+
+```
+
+class Car {
+private:
+    string make;
+    string model;
+    int year;
+
+public:
+    // Constructor
+    Car(string carMake, string carModel, int carYear) 
+        : make(carMake), model(carModel), year(carYear) {}
+
+    // Constant member function
+    void displayInfo() const {
+        cout << "Make: " << make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+
+    // Function with const parameter
+    void updateModel(const string& newModel) {
+        //newModel = "Swift"; //--> Here the newModel value cannot be changed unless we remove the const keyword in the argument
+        model = newModel;
+    }
+};
+
+int main() {
+    Car car1("Toyota", "Camry", 2022);
+    car1.displayInfo();
+    
+    string newModel = "Corolla";
+    car1.updateModel(newModel);  // Update the model
+    car1.displayInfo();
+    
+    return 0;
+}
+
+```
+
+**Note:** The `newModel` parameter is `const`, meaning that `updateModel` cannot modify `newModel` itself. However, the member variable `model` of the `Car` class is being assigned the value of `newModel`. This means that `newModel` is used to update the value of `model`, but `newModel` itself remains unchanged.
+**This use of `const` ensures that the input parameter is read-only and cannot be altered by the function.**
+
+
+### 4. Constant Objects
+
+An object of a class can be made constant by using the `const` keyword. This means that **none of its member variables can be modified** after the object is created, and **only constant member functions can be called on the object**.
+
+```
+
+class Car {
+private:
+    string make;
+    string model;
+    int year;
+
+public:
+    // Constructor
+    Car(string carMake, string carModel, int carYear) 
+        : make(carMake), model(carModel), year(carYear) {}
+
+    // Constant member function
+    void displayMake() const {
+        cout << "Make: " << make << endl;
+    }
+    void displayModel() const {
+        cout << "Model: " << model << endl;
+    }
+    
+    //----------> THIS IS NOT A CONST MEMBER FUNCTION
+    // void displayYear(){
+    //     cout << "Year: " << year << endl;
+    // }
+
+    // Non-constant member function
+    void setModel(string newModel) {
+        model = newModel;
+    }
+};
+
+int main() {
+    const Car car1("Toyota", "Camry", 2022);
+    car1.displayMake();
+    car1.displayModel();
+    // car1.displayYear();      // displayYear() WILL GIVE ERRORS AS IT IS NOT A CONST MEMBER FUNCTION BUT BEING CALLED FOR A CONST OBJECT
+    // car1.setModel("Corolla"); // This would cause a compile-time error
+    return 0;
+}
+
+```
+
+
+
+
+
+> Next topic -> [[Static Data Members]]

@@ -1,0 +1,28 @@
+
+```
+class Car{
+	public:
+		int speed;
+		string name;
+		
+		Car(int speed, string name){
+		    this->speed = speed;
+		    this->name = name;
+		}
+};
+int main(){
+	Car a(200, "Toyota");
+	Car b(300, "Honda");
+
+	a=b;
+	cout<<a.speed<<endl;
+	cout<<a.name<<endl;
+}
+```
+
+*For more, search the internet*
+
+
+
+
+> Next topic -> [[Destructor]]
