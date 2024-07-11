@@ -11,8 +11,12 @@
             "id": "4fa4f478cf8b207b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "15. Inheritance.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -34,7 +38,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byCreatedTimeReverse"
+                "sortOrder": "alphabetical"
               }
             }
           },
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "15. Inheritance.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "15. Inheritance.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -119,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.canvas"
+                "file": "15. Inheritance.md"
               }
             }
           }
@@ -140,36 +146,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5de1546689c89b27",
+  "active": "4fa4f478cf8b207b",
   "lastOpenFiles": [
+    "14. Encapsulation.md",
+    "13. Static Member Functions.md",
+    "12. Static Data Members.md",
+    "11. Constant Keyword.md",
+    "10. Initialization List.md",
+    "09. Destructor.md",
+    "08. Copy Assignment Operator.md",
+    "07. Shallow and Deep Copy.md",
+    "06. Copy Constructor.md",
+    "04. Memory Allocation.md",
+    "03. Objects.md",
+    "02. Class.md",
+    "01. Introduction.md",
+    "15. Inheritance.md",
+    "05. Constructor.md",
+    "Class.md",
     "Polymorphism.md",
-    "Inheritance.md",
-    "Encapsulation.md",
-    "Initialization List.md",
-    "Constant Keyword.md",
     "Other Concepts/Obsidian Tricks.md",
     "Other Concepts/internal state of an object.md",
     "access specifiers.md",
     "Untitled.canvas",
-    "Shallow and Deep Copy.md",
     "Other Concepts/Rough.md",
-    "Static Member Functions.md",
-    "Static Data Members.md",
-    "Destructor.md",
     "Constant Keywords.md",
-    "Copy Assignment Operator.md",
-    "Copy Constructor.md",
-    "Constructor.md",
     "some way.md",
-    "Memory Allocation.md",
-    "Objects.md",
-    "Class.md",
-    "Introduction.md",
     "Other Concepts/this.md",
     "Other Concepts/Heap.md",
     "Other Concepts",
     "Untitled/Untitled 1",
-    "polymorphism.md",
-    "Car Class.md"
+    "polymorphism.md"
   ]
 }
