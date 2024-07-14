@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "15. Inheritance.md",
+                "file": "16. Polymorphism.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "15. Inheritance.md",
+                "file": "16. Polymorphism.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "15. Inheritance.md",
+                "file": "16. Polymorphism.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "15. Inheritance.md"
+                "file": "16. Polymorphism.md"
               }
             }
           }
@@ -148,11 +148,13 @@
   },
   "active": "4fa4f478cf8b207b",
   "lastOpenFiles": [
+    "10. Initialization List.md",
+    "16. Polymorphism.md",
+    "15. Inheritance.md",
     "14. Encapsulation.md",
     "13. Static Member Functions.md",
     "12. Static Data Members.md",
     "11. Constant Keyword.md",
-    "10. Initialization List.md",
     "09. Destructor.md",
     "08. Copy Assignment Operator.md",
     "07. Shallow and Deep Copy.md",
@@ -161,7 +163,6 @@
     "03. Objects.md",
     "02. Class.md",
     "01. Introduction.md",
-    "15. Inheritance.md",
     "05. Constructor.md",
     "Class.md",
     "Polymorphism.md",
@@ -175,7 +176,6 @@
     "Other Concepts/this.md",
     "Other Concepts/Heap.md",
     "Other Concepts",
-    "Untitled/Untitled 1",
-    "polymorphism.md"
+    "Untitled/Untitled 1"
   ]
 }
