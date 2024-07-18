@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "16. Polymorphism.md",
+                "file": "17. Abstraction.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "16. Polymorphism.md",
+                "file": "17. Abstraction.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "16. Polymorphism.md",
+                "file": "17. Abstraction.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "16. Polymorphism.md"
+                "file": "17. Abstraction.md"
               }
             }
           }
@@ -148,14 +148,15 @@
   },
   "active": "4fa4f478cf8b207b",
   "lastOpenFiles": [
-    "Other Concepts/Flexibility in Code.md",
     "16. Polymorphism.md",
+    "17. Abstraction.md",
+    "15. Inheritance.md",
+    "Other Concepts/Flexibility in Code.md",
     "06. Copy Constructor.md",
     "05. Constructor.md",
     "04. Memory Allocation.md",
     "03. Objects.md",
     "10. Initialization List.md",
-    "15. Inheritance.md",
     "14. Encapsulation.md",
     "13. Static Member Functions.md",
     "12. Static Data Members.md",
@@ -174,7 +175,6 @@
     "Other Concepts/Rough.md",
     "Constant Keywords.md",
     "some way.md",
-    "Other Concepts/this.md",
     "Other Concepts",
     "Untitled/Untitled 1"
   ]
