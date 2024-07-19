@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6184b6df62335bb0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "17. Abstraction.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,10 +159,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4fa4f478cf8b207b",
+  "active": "6184b6df62335bb0",
   "lastOpenFiles": [
-    "16. Polymorphism.md",
+    "Extras.md",
     "17. Abstraction.md",
+    "Extras",
+    "Untitled.md",
+    "16. Polymorphism.md",
     "15. Inheritance.md",
     "Other Concepts/Flexibility in Code.md",
     "06. Copy Constructor.md",
@@ -173,8 +189,6 @@
     "access specifiers.md",
     "Untitled.canvas",
     "Other Concepts/Rough.md",
-    "Constant Keywords.md",
-    "some way.md",
     "Other Concepts",
     "Untitled/Untitled 1"
   ]
